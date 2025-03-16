@@ -4,6 +4,7 @@ function addItem() {
     let name = document.getElementById("itemName").value;
     let category = document.getElementById("itemCategory").value;
     let image = document.getElementById("itemImage").value || "https://via.placeholder.com/50";
+    let aquired = document.getElementById("itemAquired").checked; // Get checkbox value
 
     if (!name || !category) {
         alert("Please fill in both fields.");
@@ -31,6 +32,7 @@ function displayItems() {
             <div>
                 <p><strong>${item.name}</strong></p>
                 <p>${item.category}</p>
+                <p>Status: <strong>${item.aquired ? "✅ Aquired" : "❌ Not Aquired"}</strong></p>
             </div>
             <button class="delete-btn" onclick="deleteItem(${index})">X</button>
         `;
